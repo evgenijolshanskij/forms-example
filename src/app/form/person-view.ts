@@ -5,11 +5,11 @@ import { FormInput, ItemType } from '../components/form';
   selector: 'form-view',
   template: `
     <div class="row text-center">
-      <h2 class="col-md-12">Registration Form</h2>
+      <h2 class="col-md-12">Person Form</h2>
     </div>
     
     <app-form [onSubmit]="onSubmit"
-              [btnName]="'Register'"
+              [btnName]="'Save'"
               [form]="form">
     </app-form>
   `,
@@ -18,7 +18,7 @@ import { FormInput, ItemType } from '../components/form';
     '../../../node_modules/bootstrap/dist/css/bootstrap.css'
   ]
 })
-export default class RegistrationView {
+export default class PersonView {
 
   public form: FormInput[] = [
     {
@@ -44,26 +44,21 @@ export default class RegistrationView {
       required: true
     },
     {
-      id: 'password',
-      name: 'Password',
+      id: 'gender',
+      name: 'Gender',
       value: '',
-      type: 'password',
-      placeholder: 'Password',
-      label: 'Password',
-      inputType: ItemType.INPUT,
+      label: 'Gender',
+      inputType: ItemType.SELECTOR,
+      options: ['Male', 'Female'],
       required: true
     },
     {
-      id: 'passwordConfirmation',
-      name: 'Password Confirmation',
-      value: '',
-      type: 'password',
-      placeholder: 'Password Confirmation',
-      label: 'Password Confirmation',
-      inputType: ItemType.INPUT,
-      required: true,
-      pattern: () => { return this.form.find((fi: any) => fi.id === 'password').value; },
-      patternMessage: 'Should match to password'
+      id: 'active',
+      name: 'Is Active',
+      value: false,
+      label: 'Is Active',
+      inputType: ItemType.RADIO_BUTTON,
+      required: false
     }
   ];
 

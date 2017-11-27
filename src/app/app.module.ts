@@ -16,7 +16,7 @@ import { FormModule } from './form/form.module';
     RouterModule.forRoot([
       {
         path: '',
-        redirectTo: '/form',
+        redirectTo: '/register',
         pathMatch: 'full'
       }
     ])

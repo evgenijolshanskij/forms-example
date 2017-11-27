@@ -1,3 +1,10 @@
 button[type="submit"] {
   cursor: pointer;
 }
+
+a.active-link,
+a.active-link:hover {
+  color: #8b8b8b;
+  cursor: not-allowed;
+  text-decoration: none;
+}

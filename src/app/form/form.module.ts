@@ -4,19 +4,25 @@ import FromComponent from '../components/form';
 import RegistrationView from './registration-view';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import PersonView from './person-view';
 
 @NgModule({
   declarations: [
     FromComponent,
-    RegistrationView
+    RegistrationView,
+    PersonView
   ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule.forChild([
       {
-        path: 'form',
+        path: 'register',
         component: RegistrationView
+      },
+      {
+        path: 'person',
+        component: PersonView
       }
     ])
   ],
