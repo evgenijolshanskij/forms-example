@@ -1,26 +1,28 @@
 import { NgModule} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import FromComponent from './form';
-import FromView from './form-view';
+import FromComponent from '../components/form';
+import RegistrationView from './registration-view';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     FromComponent,
-    FromView
+    RegistrationView
   ],
   imports: [
+    CommonModule,
     FormsModule,
     RouterModule.forChild([
       {
         path: 'form',
-        component: FromView
+        component: RegistrationView
       }
     ])
   ],
   exports: [
     FromComponent,
-    FromView
+    RegistrationView
   ]
 })
 export class FormModule {}
